@@ -2,8 +2,12 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService {
 
-    //DIP 위반
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    //DIP 지킴
+    private final MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
     //comm shit enter
 
     @Override
