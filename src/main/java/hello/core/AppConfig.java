@@ -16,23 +16,27 @@ public class AppConfig { //애플리케이션의 설정 정보, 구성 정보
     //생성자 주입
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
         //comm + option + m 리펙토링
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     //생성자 주입
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy(){
+        System.out.println("call AppConfig.discountPolicy");
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
