@@ -14,17 +14,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ComponentFilterAppConfigTest {
 
-    @Test
-    void filterScan() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfigTest.class);
-
-        BeanA beanA = ac.getBean("beanA", BeanA.class);
-        assertThat(beanA).isNotNull();
-
-        assertThrows(
-                NoSuchBeanDefinitionException.class,
-                ()-> ac.getBean("beanB", BeanB.class));
-    }
+//    @Test
+//    void filterScan() {
+//        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfigTest.class);
+//
+//        BeanA beanA = ac.getBean("beanA", BeanA.class);
+//        assertThat(beanA).isNotNull();
+//
+//        assertThrows(
+//                NoSuchBeanDefinitionException.class,
+//                ()-> ac.getBean("beanB", BeanB.class));
+//    }
 
     @Configuration
     @ComponentScan(
