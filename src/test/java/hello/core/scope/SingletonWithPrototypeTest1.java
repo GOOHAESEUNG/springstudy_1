@@ -43,6 +43,7 @@ public class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
     static class ClientBean{
+
         @Autowired
         private Provider<PrototypeBean> prototypeBeanProvider;
         
